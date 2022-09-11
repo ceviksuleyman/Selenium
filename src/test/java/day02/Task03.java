@@ -43,11 +43,9 @@ public class Task03 {
         //Expected user id nin testtechproed@gmail.com oldugunu dogrulayin(verify).
 
 
-
-
         //“Addresses” ve “Sign Out” textlerinin goruntulendigini( displayed) dogrulayin(verify).
-
-
+        System.out.println("Addresses goruntuleme test -> " + driver.findElement(By.xpath("//a[@data-test=\"addresses\" ]")).isDisplayed());
+        System.out.println("Sign Out goruntuleme test -> " + driver.findElement(By.xpath("//a[@data-test=\"sign-out\" ]")).isDisplayed());
 
         //Sayfada kac tane link oldugunu bulun.
         System.out.println("sayfadaki link sayisi -> " + driver.findElements(By.tagName("a")).size());
