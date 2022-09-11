@@ -24,14 +24,15 @@ public class Task03 {
         driver.findElement(By.id("sign-in")).click();
         Thread.sleep(3000);
 
-        // email textbox,password textbox, and signin button elementlerini locate ediniz..
-        // Kullanıcı adını ve şifreyi aşağıya girin ve oturum aç (sign in)buttonunu tıklayın:
+        // email textbox,password textbox, and signin button elementlerini locate ediniz
+        // Kullanıcı adını ve şifreyi aşağıya girin ve oturum aç (sign in)buttonunu tıklayın
         // Username : testtechproed@gmail.com
         // Password : Test1234!
         String userMail = "testtechproed@gmail.com";
         String userPassword = "Test1234!";
-        WebElement userName = driver.findElement(By.id("session_email"));
-        userName.sendKeys(userMail);
+
+        WebElement userSignIn = driver.findElement(By.id("session_email"));
+        userSignIn.sendKeys(userMail);
 
         Thread.sleep(3000);
 
@@ -52,13 +53,14 @@ public class Task03 {
 
 
         //“Addresses” ve “Sign Out” textlerinin goruntulendigini( displayed) dogrulayin(verify).
-        System.out.println("Addresses goruntuleme test -> " + driver.findElement(By.xpath("//a[@data-test=\"addresses\" ]")).getText());
+        System.out.println("Addresses goruntuleme test -> " + driver.findElement(By.xpath("//a[@data-test=\"addresses\" ]")).isDisplayed());
         System.out.println("Sign Out goruntuleme test -> " + driver.findElement(By.xpath("//a[@data-test=\"sign-out\" ]")).isDisplayed());
 
 
         //Sayfada kac tane link oldugunu bulun.
         System.out.println("sayfadaki link sayisi -> " + driver.findElements(By.tagName("a")).size());
 
-        //driver.close();
+        Thread.sleep(7000);
+        driver.close();
     }
 }
