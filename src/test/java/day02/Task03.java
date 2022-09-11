@@ -44,10 +44,10 @@ public class Task03 {
 
 
         //Expected user id nin testtechproed@gmail.com oldugunu dogrulayin(verify).
-        String user = driver.findElement(By.xpath("//span[@data-test=\"current-user\"]")).getText();
-        System.out.println(user);
+        String currentUser = driver.findElement(By.xpath("//span[@data-test=\"current-user\"]")).getText();
+        System.out.println(currentUser);
 
-        if (user.equals(userMail)) System.out.println("User id test PASSED");
+        if (currentUser.equals(userMail)) System.out.println("User id test PASSED");
         else System.out.println("user id test FAILED");
 
 
