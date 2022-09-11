@@ -28,13 +28,15 @@ public class Task03 {
         // Kullanıcı adını ve şifreyi aşağıya girin ve oturum aç (sign in)buttonunu tıklayın:
         // Username : testtechproed@gmail.com
         // Password : Test1234!
+        String userMail = "testtechproed@gmail.com";
+        String userPassword = "Test1234!";
         WebElement userName = driver.findElement(By.id("session_email"));
-        userName.sendKeys("testtechproed@gmail.com");
+        userName.sendKeys(userMail);
 
         Thread.sleep(3000);
 
         WebElement password = driver.findElement(By.id("session_password"));
-        password.sendKeys("Test1234!");
+        password.sendKeys(userPassword);
 
         Thread.sleep(3000);
 
@@ -42,7 +44,11 @@ public class Task03 {
 
 
         //Expected user id nin testtechproed@gmail.com oldugunu dogrulayin(verify).
-        System.out.println(driver.findElement(By.xpath("//span[@data-test=\"current-user\"]")).getText());
+        String user = driver.findElement(By.xpath("//span[@data-test=\"current-user\"]")).getText();
+        System.out.println(user);
+
+        if (user.equals(userMail)) System.out.println("User id test PASSED");
+        else System.out.println("user id test FAILED");
 
 
         //“Addresses” ve “Sign Out” textlerinin goruntulendigini( displayed) dogrulayin(verify).
