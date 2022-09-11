@@ -13,6 +13,8 @@ public class C03_ManageMethodWait {
 
         WebDriver driver = new ChromeDriver();
 
+        driver.manage().window().maximize();
+
         /*
         Ileride Wait konusunu daha genis olarak ele alacagiz.
         Bir sayfa acilirken ilk basta sayfanin iceriginde bulunan elementlere gore bir yukleme suresine
@@ -24,6 +26,7 @@ public class C03_ManageMethodWait {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         Thread.sleep(5000);
+
         driver.get("https://www.youtube.com");
         Thread.sleep(3000);
 
