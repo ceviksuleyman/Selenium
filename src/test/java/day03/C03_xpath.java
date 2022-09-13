@@ -9,6 +9,12 @@ import java.time.Duration;
 
 public class C03_xpath {
 
+    /*
+    1-absolute xpath(mutlak) -> kullanimi cok tercih EDILMEZ   en basa // sonraki her adimda / yazarak hedef element'e kadar tum tag'lar yazilir
+
+    2-relative xpath(bagil) -> //*[@class='added-manually']    , //*[text()='Delete']
+     */
+
     public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "src/resources/drivers/chromedriver.exe");
@@ -26,7 +32,7 @@ public class C03_xpath {
         Thread.sleep(3000);
 
 
-        //Delete butonu’nun gorunur oldugunu test edin
+        //Delete butonu’nun gorunur oldugunu test edin  //*[@class='added-manually']
         WebElement delete = driver.findElement(By.xpath("//*[text()='Delete']"));
         System.out.println("delete botunu goruntuleme test -> " + delete.isDisplayed());
 
