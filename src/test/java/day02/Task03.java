@@ -1,5 +1,6 @@
 package day02;
 
+import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -45,10 +46,10 @@ public class Task03 {
 
 
         //Expected user id nin testtechproed@gmail.com oldugunu dogrulayin(verify).
-        String currentUser = driver.findElement(By.xpath("//span[@data-test=\"current-user\"]")).getText();
-        System.out.println(currentUser);
+        String expectedUser = driver.findElement(By.xpath("//span[@data-test=\"current-user\"]")).getText();
+        System.out.println(expectedUser);
 
-        if (currentUser.equals(userMail)) System.out.println("User id test PASSED");
+        if (expectedUser.equals(userMail)) System.out.println("User id test PASSED");
         else System.out.println("user id test FAILED");
 
 

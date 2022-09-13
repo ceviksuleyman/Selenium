@@ -72,7 +72,7 @@ public class C04_Locators {
         driver.navigate().back();
         Thread.sleep(3000);
 
-        // 5 - By.linkText()
+        // 5 - By.partialLinkText()
         // <a> tag'indan istedigimiz  parcayi aldik ve  gittik
         driver.findElement(By.partialLinkText("ucts on Amazon")).click();
 
