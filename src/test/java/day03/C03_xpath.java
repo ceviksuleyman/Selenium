@@ -29,21 +29,39 @@ public class C03_xpath {
 
         WebElement addElement = driver.findElement(By.xpath("//*[text()='Add Element']"));
         addElement.click();
-        Thread.sleep(3000);
+
+
+        Thread.sleep(3000); // 10 defa addElement'e tikla
+        int x = 10;
+        while (x != 0) {
+            addElement.click();
+            x--;
+            Thread.sleep(2000);
+        }
 
 
         //Delete butonu’nun gorunur oldugunu test edin  //*[@class='added-manually']
-        WebElement delete = driver.findElement(By.xpath("//*[text()='Delete']"));
-        System.out.println("delete botunu goruntuleme test -> " + delete.isDisplayed());
+        WebElement deleteButton = driver.findElement(By.xpath("//*[text()='Delete']"));
+        if (deleteButton.isDisplayed()) System.out.println("Delete Button PASS");
+        else System.out.println("Delete Button FAIL");
+
+        /*
+        Locate alirken text kullanicaksak  //*[text()='Delete'] bu formattadir.
+        Atribute kullanicaksak //*[@class='added-manually'] bu format kullanilir.
+         */
 
 
         //Delete tusuna basin
-        delete.click();
+        deleteButton.click();
 
 
         //“Add/Remove Elements” yazisinin gorunur oldugunu test edin
         WebElement addRemove = driver.findElement(By.xpath("//*[text()='Add/Remove Elements']"));
-        System.out.println("Add/Remove Elements butonu goruntuleme test -> " + addRemove.isDisplayed());
+        if (addRemove.isDisplayed()) System.out.println("Add/Remove Elements PASS");
+        else System.out.println("Add/Remove Elements FAIL");
+
+        //kapat
+        driver.close();
 
     }
 }
